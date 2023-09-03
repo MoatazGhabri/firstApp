@@ -1,0 +1,337 @@
+.App {
+  text-align: center;
+  background: linear-gradient(135deg, #e4dfdf4e, #1a171758);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(188, 128, 128);
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.btn{
+  margin: 2px;
+}
+.btn-secondary{
+margin-left: 1200px;
+}
+.btn.btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3f9b0a;
+  color: #fff;
+  border: none;
+  border-radius: 5pc; /* Add border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transitions */
+
+  /* Center text vertically */
+  display: flex;
+  align-items: center;
+}
+
+/* Hover effect */
+.btn.btn-secondary:hover {
+  background-color: #68945e;
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+.divbtn{
+  float: left;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  margin-left: 200px; /* Add a left margin to accommodate the fixed sidebar */
+}
+
+main {
+  padding: 10px;
+  flex: 1; /* Allow the main content to take up the remaining space */
+}
+
+.title {
+  font-size: 3rem;
+  display: grid;
+  place-items: center;
+}
+
+/* Sidebar */
+.sidebar-container {
+  position: fixed;
+}
+
+.sidebar {
+  /* Your existing sidebar styles */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: rgba(145, 4, 4, 0.423);
+  color: white;
+  overflow-y: auto;
+  z-index: 2; /* Place the sidebar above the content */
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.top_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+}
+
+.logo {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.bars {
+  width: 30px;
+}
+
+.hide {
+  display: none;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  height: 30px;
+  padding: 10px;
+}
+
+.search input {
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+  background: rgb(238, 238, 238);
+  color: white;
+}
+
+.routes {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.link {
+  display: flex;
+  color: white;
+  gap: 10px;
+  padding: 5px 10px;
+  border-right: 4px solid transparent;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link:hover {
+  border-right: 4px solid white;
+  background: rgba(45, 51, 89, 0.267);
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.active {
+  border-right: 4px solid white;
+  background: rgba(45, 51, 89, 0.522);
+}
+
+.link_text {
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.menu {
+  display: flex;
+  color: white;
+  padding: 5px 10px;
+  border-right: 4px solid transparent;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  justify-content: space-between;
+}
+
+.menu_item {
+  display: flex;
+  gap: 10px;
+}
+
+.main-container {
+  display: flex;
+}
+
+
+.menu_container .link {
+  padding-left: 20px;
+  border-bottom: #fff 0.5px solid;
+}
+/* ***************************** */
+
+/* Your existing CSS */
+
+/* ... */
+
+/* Add this CSS to your existing stylesheet or create a new CSS file */
+
+/* Add this CSS to your existing stylesheet or create a new CSS file */
+.stats-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stats-card:nth-child(1) {
+  background: linear-gradient(135deg, #0d6af6, #708791);
+}
+
+.stats-card:nth-child(2) {
+  background: linear-gradient(135deg, #8ba515, #a89392);
+}
+
+.stats-card:nth-child(3) {
+  background: linear-gradient(135deg, #73c22e, #173970);
+}
+
+.stats-card h3,
+.stats-card p {
+  color: white;
+}
+
+/* ... (rest of the existing styles) */
+.stats-card {
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  padding: 20px;
+  background: linear-gradient(135deg, #0d6af6, #708791);
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* ProductListing.css */
+.admin-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  position: relative;
+}
+
+.user-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.admin-name {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border-radius: 3pc;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 2px 6px;
+  text-decoration: none;
+  cursor: pointer;
+
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #230a0a39;
+  border-radius: 3pc;
+
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-icon {
+  font-size: 28px;
+}
