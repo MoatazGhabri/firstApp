@@ -3,13 +3,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+const apiURL = process.env.REACT_APP_API_URL;
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`)
+    axios.get(`${apiURL}/api/products/${id}`)
       .then((response) => {
         setProduct(response.data);
       })

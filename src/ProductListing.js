@@ -6,6 +6,7 @@ import axios from "axios";
 import { FaUserCircle } from "react-icons/fa"; // Import the user icon
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+const apiURL = process.env.REACT_APP_API_URL;
 
 const ProductListing = () => {
   const [products, setProducts] = useState([]);
@@ -28,7 +29,7 @@ const ProductListing = () => {
   
 
   const fetchProducts = () => {
-    axios.get("http://localhost:5000/api/products")
+    axios.get(`${apiURL}/api/products`)
       .then((response) => {
         setProducts(response.data);
         
@@ -40,7 +41,7 @@ const ProductListing = () => {
 
   const removeProduct = (id) => {
     if (window.confirm("Do you want to remove this product?")) {
-      axios.delete(`http://localhost:5000/api/products/${id}`)
+      axios.delete(`${apiURL}/api/products/${id}`)
         .then(() => {
           alert("Product removed successfully.");
           fetchProducts();
@@ -52,7 +53,7 @@ const ProductListing = () => {
   };
   const fetchUsersCount = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/users/count");
+      const response = await axios.get(`${apiURL}/api/users/count`);
       setUsersCount(response.data.count);
     } catch (error) {
       console.error("Error fetching user count:", error);
@@ -61,7 +62,7 @@ const ProductListing = () => {
 
   const fetchCommentsCount = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/comments/count");
+      const response = await axios.get(`${apiURL}/api/comments/count`);
       setCommentsCount(response.data.count);
     } catch (error) {
       console.error("Error fetching comment count:", error);

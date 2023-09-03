@@ -16,8 +16,8 @@ const ProductCreate = () => {
     e.preventDefault();
     const newProduct = { name, price, quantity, image };
     axios
-      .post("http://localhost:5000/api/products", newProduct)
-      .then((response) => {
+    .post(`${process.env.REACT_APP_API_URL}/api/products`, newProduct)
+    .then((response) => {
         alert("Product added successfully.");
         navigate("/admin/dashboard"); // Use navigate instead of history.push
       })

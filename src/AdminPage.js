@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import "./AdminPage.css";
+const apiURL = process.env.REACT_APP_API_URL;
 
 const AdminPage = () => {
   const [comments, setComments] = useState([]);
@@ -18,7 +19,7 @@ const AdminPage = () => {
 
   const fetchComments = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/comments");
+      const response = await axios.get(`${apiURL}/api/comments`);
       setComments(response.data);
     } catch (error) {
       console.error("Error fetching comments:", error);
@@ -27,7 +28,7 @@ const AdminPage = () => {
 
   const handleConfirm = async (commentId) => {
     try {
-      await axios.post(`http://localhost:5000/api/comments/${commentId}/confirm`);
+      await axios.post(`${apiURL}/api/comments/${commentId}/confirm`);
       fetchComments();
     } catch (error) {
       console.error("Error confirming comment:", error);
@@ -36,7 +37,7 @@ const AdminPage = () => {
 
   const handleRemove = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/comments/${commentId}/remove`);
+      await axios.delete(`${apiURL}/api/comments/${commentId}/remove`);
       fetchComments();
     } catch (error) {
       console.error("Error removing comment:", error);
@@ -44,7 +45,7 @@ const AdminPage = () => {
   };
   const fetchProductCount = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/products/count");
+      const response = await axios.get(`${apiURL}/api/products/count`);
       setProductCount(response.data.count);
     } catch (error) {
       console.error("Error fetching user count:", error);
@@ -52,7 +53,7 @@ const AdminPage = () => {
   };
   const fetchUsersCount = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/users/count");
+      const response = await axios.get(`${apiURL}/api/users/count`);
       setUsersCount(response.data.count);
     } catch (error) {
       console.error("Error fetching user count:", error);

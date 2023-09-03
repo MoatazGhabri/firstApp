@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
+const apiURL = process.env.REACT_APP_API_URL;
 
 const ProductEdit = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const ProductEdit = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/products/${id}`)
+      .get(`${apiURL}/api/products/${id}`)
       .then((response) => {
         const productData = response.data;
         setName(productData.name);
@@ -33,7 +34,7 @@ const ProductEdit = () => {
     e.preventDefault();
     const updatedProduct = { name, price, quantity, image };
     axios
-      .put(`http://localhost:5000/api/products/${id}`, updatedProduct)
+      .put(`${apiURL}/api/products/${id}`, updatedProduct)
       .then((response) => {
         alert("Product updated successfully.");
         navigate("/admin/dashboard"); // Use navigate instead of history.push
