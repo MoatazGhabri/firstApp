@@ -19,7 +19,7 @@ const ProductCreate = () => {
     .post(`${process.env.REACT_APP_API_URL}/api/products`, newProduct)
     .then((response) => {
         alert("Product added successfully.");
-        navigate("/admin/dashboard"); // Use navigate instead of history.push
+        navigate("/"); // Use navigate instead of history.push
       })
       .catch((error) => {
         console.log(error);

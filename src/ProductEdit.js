@@ -37,7 +37,7 @@ const ProductEdit = () => {
       .put(`${apiURL}/api/products/${id}`, updatedProduct)
       .then((response) => {
         alert("Product updated successfully.");
-        navigate("/admin/dashboard"); // Use navigate instead of history.push
+        navigate("/"); // Use navigate instead of history.push
       })
       .catch((error) => {
         console.log(error);

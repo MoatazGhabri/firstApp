@@ -15,13 +15,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<AdminLogin />} />
+          <Route path="P" element={<AdminLogin />} />
           <Route
             path="/*"
             element={
               <WithSidebar>
                 <Routes>
-                  <Route path="admin/dashboard" element={<ProductListing />} />
+                  <Route path="/" element={<ProductListing />} />
                   <Route path="product/create" element={<ProductCreate />} />
                   <Route path="product/edit/:id" element={<ProductEdit />} />
                   <Route path="product/:id" element={<ProductDetail />} />
